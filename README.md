@@ -38,3 +38,20 @@ src
 ```
 
 E importar reactotron no arquivo App.js
+
+## rotas privadas
+
+Criamos o nosso próprio componente Route.js em Routes e ao invés de importar o Route de react-router-dom, vamos usar a nossa próprio Route.js
+
+Controlando se o usuário está logado/autenticado ou não para ele acessar uma rota ou outra baseado no estado de autenticação
+
+```bash
+~/front$ yarn add prop-types
+
+src
+...
+├── routes
+│   ├── index.js
+│   └── Route.js
+...
+```

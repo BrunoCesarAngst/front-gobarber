@@ -23,3 +23,18 @@ src
 └── services
     └── history.js # para navegar o usuário de todas as telas e do redux
 ```
+
+## configurando o Reactotron
+
+```bash
+~/front$ yarn add reactotron-react-js
+
+src
+├── App.js
+├── config
+│   └── ReactotronConfig.js
+├── index.js
+...
+```
+
+E importar reactotron no arquivo App.js

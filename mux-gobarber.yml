@@ -1,0 +1,25 @@
+# ~/.tmuxinator/mux-gobarber.yml
+
+name: mux-gobarber
+root: ~/GitHub/GoBarberBFM/front-gobarber
+
+windows:
+  - editor:
+      layout: 8695,169x39,0,0{81x39,0,0[81x19,0,0,0,81x19,0,20,2],87x39,82,0,1}]
+      panes:
+        - logs:
+          - echo 'oi Code'
+          - nohup code . &!
+          - cd ..
+          - cd back-gobarber
+          - echo 'oi Docker'
+          - docker start database
+          - docker start mongobarber
+          - docker start redisbarber
+          - echo 'oi Dev'
+          - yarn dev
+        - logs:
+          - echo 'oi aqui'
+          - yarn start
+        - logs:
+          - echo 'oi lá'

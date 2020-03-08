@@ -6,11 +6,14 @@ import './config/ReactotronConfig';
 import Routes from './routes';
 import history from './services/history';
 
+import GlobalStyle from './styles/global';
+
 function App() {
   return (
     // para ouvir todas as partes de navegação dentro do history
     <Router history={history}>
       <Routes />
+      <GlobalStyle />
     </Router>
   );
 }

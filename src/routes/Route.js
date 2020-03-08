@@ -5,6 +5,9 @@ import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 // com Redirect um componente que faz redirecionamento
 
+import AuthLayout from '../pages/_layouts/auth';
+import DefaultLayout from '../pages/_layouts/default';
+
 export default function RouteWrapper({
   // pegando as propriedades das rotas
   component: Component, // c maiúsculo para poder usar como um componente
@@ -14,7 +17,7 @@ export default function RouteWrapper({
   // e aqui todo o resto dos parâmetros
 }) {
   // para reter a informação de usuário logado
-  const signed = true;
+  const signed = false;
 
   // se a rota é privada e precisa estar logado, volta para tela de cadastro de login
   if (!signed && isPrivate) {
@@ -26,11 +29,24 @@ export default function RouteWrapper({
     return <Redirect to="/dashboard" />;
   }
 
-  return <Route {...rest} component={Component} />;
+  // criando um condicional de renderização
+  const Layout = signed ? DefaultLayout : AuthLayout;
+
+  return (
+    <Route
+      {...rest}
+      render={props => (
+        <Layout>
+          <Component {...props} />
+        </Layout>
+      )}
+    />
+  );
 }
 
 RouteWrapper.propTypes = {
   isPrivate: PropTypes.bool,
+  // propTypes de um component
   component: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
     .isRequired,
 };

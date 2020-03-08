@@ -55,3 +55,9 @@ src
 │   └── Route.js
 ...
 ```
+
+## Layouts por página
+
+```bash
+~/front$ yarn add styled-components
+```

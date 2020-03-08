@@ -113,3 +113,9 @@ Alterando a forma de navegação nas rotas das pastas e arquivos, reconfigurando
 │       └── ./src/styles/global.js
 └── ./yarn.lock
 ```
+
+## Estilização da autenticação
+
+```bash
+~/front$ yarn add polished
+```

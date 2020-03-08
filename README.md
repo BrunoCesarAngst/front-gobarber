@@ -56,8 +56,60 @@ src
 ...
 ```
 
-## Layouts por página
+## Layouts por página e estilos globais
 
 ```bash
 ~/front$ yarn add styled-components
+```
+
+## Utilizando Root Import
+
+Alterando a forma de navegação nas rotas das pastas e arquivos, reconfigurando o babel no parte create-react-app para transpilar isso de outra forma.
+
+```bash
+~/front$ yarn add customize-cra react-app-rewired -D
+# o AddBabelPlugin uma função que adiciona um plugin do babel dentro das configurações do react, com override estou substituindo configurações do create-react-app
+~/front$ yarn add babel-plugin-root-import -D
+# para resolver e avisar o eslint que estamos usando um padrão novo
+~/front$ yarn add eslint-import-resolver-babel-plugin-root-import -D
+
+.
+├── ./commitlint.config.js
+├── ./config-overrides.js # criamos essa configuração que adiciona o plugin
+├── ./jsconfig.json # criamos essa configuração que habilita o plugin no eslint
+├── ./mux-gobarber.yml
+├── ./nohup.out
+├── ./package.json
+├── ./public
+│   └── ./public/index.html
+├── ./README.md
+├── ./src
+│   ├── ./src/App.js
+│   ├── ./src/config
+│   │   └── ./src/config/ReactotronConfig.js
+│   ├── ./src/index.js
+│   ├── ./src/pages
+│   │   ├── ./src/pages/Dashboard
+│   │   │   └── ./src/pages/Dashboard/index.js
+│   │   ├── ./src/pages/_layouts
+│   │   │   ├── ./src/pages/_layouts/auth
+│   │   │   │   ├── ./src/pages/_layouts/auth/index.js
+│   │   │   │   └── ./src/pages/_layouts/auth/styles.js
+│   │   │   └── ./src/pages/_layouts/default
+│   │   │       ├── ./src/pages/_layouts/default/index.js
+│   │   │       └── ./src/pages/_layouts/default/styles.js
+│   │   ├── ./src/pages/Profile
+│   │   │   └── ./src/pages/Profile/index.js
+│   │   ├── ./src/pages/SignIn
+│   │   │   └── ./src/pages/SignIn/index.js
+│   │   └── ./src/pages/SignUp
+│   │       └── ./src/pages/SignUp/index.js
+│   ├── ./src/routes
+│   │   ├── ./src/routes/index.js
+│   │   └── ./src/routes/Route.js
+│   ├── ./src/services
+│   │   └── ./src/services/history.js
+│   └── ./src/styles
+│       └── ./src/styles/global.js
+└── ./yarn.lock
 ```

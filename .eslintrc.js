@@ -38,13 +38,15 @@ module.exports = {
       camelcase: 'off',
       'no-console': ['error', { allow: ['tron'] }],
       'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'warn'
+      'react-hooks/exhaustive-deps': 'warn',
+      // usando require sem erro
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
     },
-    // settings: {
-    //   'import/resolver': {
-    //     'babel-plugin-root-import': {
-    //       rootPathSuffix: 'src'
-    //     },
-    //   },
-    // }
+    settings: {
+      'import/resolver': {
+        'babel-plugin-root-import': {
+          rootPathSuffix: 'src'
+        },
+      },
+    }
 };

@@ -131,3 +131,22 @@ Alterando a forma de navegação nas rotas das pastas e arquivos, reconfigurando
 ```bash
 ~/front$ yarn add yup
 ```
+
+## Configurando store
+
+Configurando a parte de autenticação do usuário por dentro do redux, deixando o token JWT acessível em toda nossa aplicação, assim como informações do cliente logado, tornando acessível id e nome do usuário logado para vários componentes
+
+```bash
+~/front$ yarn add redux redux-saga react-redux reactotron-redux reactotron-redux-saga immer
+
+src/store
+├── createStore.js
+├── index.js
+└── modules
+    ├── auth
+    │   ├── actions.js
+    │   ├── reducer.js
+    │   └── sagas.js
+    ├── rootReducer.js # uni todos os reducers
+    └── rootSaga.js #uni todos os sagas
+```

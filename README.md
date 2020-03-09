@@ -148,5 +148,13 @@ src/store
     │   ├── reducer.js
     │   └── sagas.js
     ├── rootReducer.js # uni todos os reducers
-    └── rootSaga.js #uni todos os sagas
+    └── rootSaga.js # uni todos os sagas
+```
+
+## Autenticação
+
+Receber e-mail e senha dentro do redux-saga ele vai fazer a chama a API vai receber de volta o token e os dados do usuário, armazenando essas informações no reducer
+
+```bash
+~/front$ yarn add axios
 ```

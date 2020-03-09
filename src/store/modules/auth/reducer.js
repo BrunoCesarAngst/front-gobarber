@@ -1,7 +1,5 @@
+const INITIAL_STATE = {};
 // separando o valor inicial do estado dentro de uma variável
-const INITIAL_STATE = {
-  token: '123',
-};
 
 // reducer sempre é uma função
 export default function auth(state = INITIAL_STATE, action) {
